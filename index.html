@@ -6,12 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스와이퍼 갤러리</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/style.css">
     <!-- swiper 코드 -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
-    
+    <main>
+        <section class="swiper-wrapper">
+            <article class="swiper-slide">1</article>
+            <article class="swiper-slide">2</article>
+            <article class="swiper-slide">3</article>
+            <article class="swiper-slide">4</article>
+            <article class="swiper-slide">5</article>
+        </section>
+    </main>
+
+    <script>
+        //기본 스와이퍼 연결 방법
+        const swiper = new Swiper("main",{
+            speed: 500, //스와이프시 패널이 넘어가는 속도, 1000에 1초, 컴마는 ;쓰는 것처럼 필수임
+            loop: true, //순환시키는 기능(앞뒤를 연결시킨다)
+            direction: "horizontal", // horizontal 가로, vertical 세로 스와이프
+            grabCursor: true, //마우스포인터로 집는 액션이 나옴
+            slidesPerView: "auto", //숫자가 들어갔을 때 해당 숫자의 단위로 패널이 보인다,auto:100%,특정크기를지정
+            spaceBetween: 20, //패널 사이의 간격 넓이(px)
+            centeredSlides: true //활성화 되는 페이지를 가운데로 오게한다
+        });
+    </script>
 </body>
 </html>
