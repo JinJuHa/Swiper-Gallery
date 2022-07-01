@@ -12,15 +12,71 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
+
+    <h1>SWIPER.G</h1>
     <main>
         <section class="swiper-wrapper">
-            <article class="swiper-slide">1</article>
-            <article class="swiper-slide">2</article>
-            <article class="swiper-slide">3</article>
-            <article class="swiper-slide">4</article>
-            <article class="swiper-slide">5</article>
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic1.jpg" alt="pic1">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, impedit?</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic2.jpg" alt="pic2">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, optio?</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic3.jpg" alt="pic3">
+                        <h2>Ullam optio iure quas?</h2>
+                        <p>Aspernatur iure culpa placeat iusto, tenetur sint doloremque explicabo! Laudantium!</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic4.jpg" alt="pic4">
+                        <h2>Doloribus commodi id quae.</h2>
+                        <p>Beatae ea accusantium facere iusto minima repellat temporibus, odit nulla!</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic5.jpg" alt="pic5">
+                        <h2>Enim deserunt facere molestiae!</h2>
+                        <p>Mollitia, tempore. Vitae debitis asperiores eum voluptatibus? Ipsum, inventore incidunt!</p>
+                    </div>
+                </div>
+            </article>
+
         </section>
+
+        <nav class="swiper-pagination"></nav>
+
+        <nav class="swiper-button-prev navi"></nav>
+        <nav class="swiper-button-next navi"></nav>
     </main>
+
+    <footer>
+        2022 SWIPER.G &copy; ALL RIGHTS RESERVED.
+    </footer>
 
     <script>
         //기본 스와이퍼 연결 방법
@@ -31,7 +87,23 @@
             grabCursor: true, //마우스포인터로 집는 액션이 나옴
             slidesPerView: "auto", //숫자가 들어갔을 때 해당 숫자의 단위로 패널이 보인다,auto:100%,특정크기를지정
             spaceBetween: 20, //패널 사이의 간격 넓이(px)
-            centeredSlides: true //활성화 되는 페이지를 가운데로 오게한다
+            centeredSlides: true, //활성화 되는 페이지를 가운데로 오게한다
+            pagination: {
+                el: ".swiper-pagination", //이동할 때 아래쪽에 원 색상이 바뀌며 활성화 됨
+                //clickable: true, //클릭도 가능하게 됨
+                type: "fraction"
+            },
+            navigation: {
+                prevEl: ".swiper-button-prev", //화살표 버튼, 뒤로가기
+                nextEl: ".swiper-button-next" //화살표 버튼, 앞으로가기
+            },
+            effect: "coverflow", // 3D 형태로 패널을 설정
+            coverflowEffect: { // 효과 넣기
+                rotate: 50, // Y축 회전의 각도
+                stretch: -200, // 사이의 간격을 당긴다. -값을 주면 멀어진다
+                depth: 400, // 3D 효과의 원근감을 준다
+                slideShadows: false // 패널의 그림자 설정
+            }
         });
     </script>
 </body>
